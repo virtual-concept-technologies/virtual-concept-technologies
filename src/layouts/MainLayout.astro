@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Virtual Concept Technologies',
+  description = 'AI-powered digital solutions, cybersecurity, and technical training.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Virtual Concept Technologies" />
+
+    <slot name="head" />
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-950 antialiased">
+    <Header />
+
+    <slot />
+
+    <Footer />
+  </body>
+</html>

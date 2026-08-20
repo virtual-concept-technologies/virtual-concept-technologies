@@ -1,0 +1,177 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Start a Project | Virtual Concept Technologies"
+  description="Start a conversation with Virtual Concept Technologies about AI solutions, cybersecurity, training, or VCT products."
+>
+  <main>
+    <section class="bg-white">
+      <div class="mx-auto w-full max-w-7xl px-6 py-20 sm:py-24 lg:px-8 lg:py-28">
+
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+
+          <!-- Introduction -->
+          <div class="max-w-xl">
+
+            <p class="text-sm font-bold uppercase tracking-widest text-blue-600">
+              Start a Project
+            </p>
+
+            <h1 class="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              Tell us what you want to build.
+            </h1>
+
+            <p class="mt-6 text-lg leading-8 text-slate-600">
+              Whether you are exploring an AI solution, improving security,
+              developing a product, or looking for technical training,
+              start by telling us what you are trying to achieve.
+            </p>
+
+            <div class="mt-10 space-y-7 border-t border-slate-200 pt-8">
+
+              <div>
+                <h2 class="text-base font-semibold text-slate-950">
+                  Build
+                </h2>
+                <p class="mt-1 text-sm leading-6 text-slate-500">
+                  AI solutions, automation, AI agents, and SaaS.
+                </p>
+              </div>
+
+              <div>
+                <h2 class="text-base font-semibold text-slate-950">
+                  Secure
+                </h2>
+                <p class="mt-1 text-sm leading-6 text-slate-500">
+                  Cybersecurity, network security, application security,
+                  and AI security.
+                </p>
+              </div>
+
+              <div>
+                <h2 class="text-base font-semibold text-slate-950">
+                  Enable
+                </h2>
+                <p class="mt-1 text-sm leading-6 text-slate-500">
+                  Training, AI skills, cybersecurity, and SOC.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- Contact form -->
+          <div class="w-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 lg:p-10">
+
+            <form
+              action="mailto:xenyinnaya@gmail.com"
+              method="post"
+              enctype="text/plain"
+              class="space-y-6"
+            >
+
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-semibold text-slate-950"
+                >
+                  Name
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  class="mt-2 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                />
+              </div>
+
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-semibold text-slate-950"
+                >
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  class="mt-2 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                />
+              </div>
+
+
+              <div>
+                <label
+                  for="area"
+                  class="block text-sm font-semibold text-slate-950"
+                >
+                  What do you need?
+                </label>
+
+                <select
+                  id="area"
+                  name="area"
+                  required
+                  class="mt-2 block w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                >
+                  <option value="">Select an area</option>
+                  <option value="Build">Build</option>
+                  <option value="Secure">Secure</option>
+                  <option value="Enable">Enable</option>
+                  <option value="VCT Products / SaaS">VCT Products / SaaS</option>
+                </select>
+              </div>
+
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-semibold text-slate-950"
+                >
+                  Tell us about your project
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="What are you trying to build, secure, or learn?"
+                  class="mt-2 block w-full resize-y rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none placeholder:text-slate-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                ></textarea>
+              </div>
+
+
+              <button
+                type="submit"
+                class="w-full rounded-lg bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-blue-700"
+              >
+                Send Project Request
+              </button>
+
+              <p class="text-xs leading-5 text-slate-500">
+                This is an initial contact form. A secure production
+                submission endpoint will be implemented before launch.
+              </p>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+</MainLayout>

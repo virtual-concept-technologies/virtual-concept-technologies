@@ -1,0 +1,21 @@
+---
+interface Props {
+  children: any;
+  color?: 'blue' | 'cyan' | 'slate';
+}
+
+const { color = 'blue' } = Astro.props;
+
+const colors = {
+  blue: 'text-blue-600',
+  cyan: 'text-cyan-600',
+  slate: 'text-slate-500',
+};
+---
+
+<p class:list={[
+  'text-sm font-bold uppercase tracking-[0.18em]',
+  colors[color],
+]}>
+  <slot />
+</p>

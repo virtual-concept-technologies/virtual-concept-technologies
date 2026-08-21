@@ -2672,3 +2672,178 @@ The third is:
 
 This document is therefore part of the project itself, not an optional note.
 
+---
+
+# 86. Project Continuity Ledger
+
+This section preserves the practical project context needed to continue development across future sessions, developers, or AI-assisted development environments.
+
+It complements Git history and the rest of this documentation. It does not replace the repository as the source of truth.
+
+## 86.1 Current Operational State
+
+The current project is:
+
+- **Project:** Virtual Concept Technologies website
+- **Production domain:** `virtualconcept.tech`
+- **Repository:** `virtual-concept-technologies/virtual-concept-technologies`
+- **Primary branch:** `main`
+- **Framework:** Astro
+- **Styling:** Tailwind CSS
+- **Runtime requirement:** Node.js 22.12.0 or newer
+- **Hosting:** GitHub Pages
+- **Deployment:** GitHub Actions
+- **Development environment:** GitHub Codespaces
+- **Site architecture:** Static/prerendered
+- **Database:** None
+- **Traditional application server:** None
+
+The repository is the authoritative source of the website.
+
+## 86.2 Current Website Areas
+
+The current site contains:
+
+- Home
+- About
+- Build
+- Secure
+- Enable
+- Products
+- Contact
+
+The Build, Secure, and Enable sections use data-driven service structures and dynamic `[slug]` routes.
+
+The About page contains the company presentation and the profile of Enyinnaya Omeruah.
+
+The About profile currently includes the optimized WebP headshot:
+
+`public/enyinnaya-omeruah.webp`
+
+The global header includes responsive desktop and mobile navigation.
+
+The mobile navigation uses an accessible menu button with open/close state handling.
+
+## 86.3 Current Deployment Flow
+
+The production flow is:
+
+    GitHub repository
+          |
+          v
+      main branch
+          |
+          v
+    GitHub Actions
+          |
+          v
+       npm ci
+          |
+          v
+     npm run build
+          |
+          v
+      GitHub Pages
+          |
+          v
+    virtualconcept.tech
+
+Production changes should be represented in Git before they are considered permanent.
+
+## 86.4 Future AI Session Starting Procedure
+
+When an AI agent begins work on this project after a previous session, it must not rely on conversational memory alone.
+
+It should first inspect the current repository.
+
+Minimum inspection:
+
+    git status
+    git log --oneline -10
+    git branch --show-current
+
+Then inspect the relevant source files and this documentation before making changes.
+
+The current repository state takes precedence over remembered conversation context.
+
+## 86.5 Continuity Rules
+
+Future AI agents should:
+
+1. Understand the existing architecture before changing it.
+2. Inspect relevant files before editing.
+3. Preserve existing patterns where practical.
+4. Make the smallest change that satisfies the request.
+5. Avoid unrelated refactoring.
+6. Avoid unnecessary dependencies.
+7. Avoid changing working infrastructure without a genuine reason.
+8. Treat explicit scope restrictions as hard requirements.
+9. Run `git diff --check` after changes.
+10. Run `npm run build` for website code changes.
+11. Review the resulting Git diff before committing.
+12. Verify deployment when a change has been pushed to production.
+13. Update this documentation when important architectural or operational knowledge changes.
+
+## 86.6 Maintaining Accuracy
+
+This ledger must describe the repository that actually exists.
+
+If the architecture, deployment process, navigation, technology stack, assets, development workflow, or other important project characteristics change, this documentation should be updated accordingly.
+
+Documentation must never claim that an implementation exists when it does not exist in the repository.
+
+## 86.7 Conversation Continuity
+
+Previous AI conversations may contain useful reasoning, decisions, preferences, and implementation history, but conversations are not the authoritative project record.
+
+When previous conversational context is unavailable, the AI agent should reconstruct the project from:
+
+1. Current repository files
+2. Git history
+3. Project documentation
+4. Deployment configuration
+5. Existing implementation patterns
+
+The agent must not invent missing history.
+
+If the repository does not provide sufficient evidence for an important decision, uncertainty should be identified explicitly rather than replaced with an assumption.
+
+## 86.8 Change Discipline
+
+When the maintainer requests a narrowly scoped change, only that change should be made unless another modification is technically necessary.
+
+In particular, do not casually:
+
+- redesign existing pages;
+- rewrite working components;
+- alter unrelated content;
+- introduce new frameworks;
+- change deployment architecture;
+- modify domain configuration;
+- replace working solutions with different implementations;
+- reorganize the repository without a clear reason.
+
+The project should evolve deliberately.
+
+## 86.9 Session Handover Standard
+
+A significant development session should leave enough evidence for another developer or AI agent to determine:
+
+- what was changed;
+- why it was changed;
+- which files were affected;
+- whether validation passed;
+- whether deployment occurred;
+- whether anything remains unfinished.
+
+Git commits provide the detailed historical record.
+
+This documentation provides the durable operational context.
+
+## 86.10 Continuity Objective
+
+The long-term objective is that a future developer or AI agent can enter the repository after an extended period, read this documentation, inspect the current implementation, and continue the project safely without depending on undocumented personal memory.
+
+The repository, Git history, and documentation should therefore remain synchronized.
+
+This continuity mechanism should improve over time without becoming unnecessarily complex.

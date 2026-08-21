@@ -58,10 +58,14 @@
 
       <button
         type="button"
-        aria-label="Navigation menu"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        data-menu-button
         class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 lg:hidden"
       >
         <svg
+          data-menu-open-icon
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -76,8 +80,86 @@
             d="M4 6h16M4 12h16M4 18h16"
           />
         </svg>
+
+        <svg
+          data-menu-close-icon
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.8"
+          stroke="currentColor"
+          class="hidden h-5 w-5"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 6l12 12M18 6L6 18"
+          />
+        </svg>
       </button>
     </div>
 
   </div>
+
+  <div
+    id="mobile-navigation"
+    data-mobile-navigation
+    class="hidden border-t border-slate-200 bg-white lg:hidden"
+  >
+    <nav aria-label="Mobile navigation">
+      <ul class="mx-auto max-w-7xl px-6 py-4 lg:px-8">
+        <li>
+          <a href="/build/" class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
+            Build
+          </a>
+        </li>
+        <li>
+          <a href="/secure/" class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
+            Secure
+          </a>
+        </li>
+        <li>
+          <a href="/enable/" class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
+            Enable
+          </a>
+        </li>
+        <li>
+          <a href="/products/" class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
+            Products
+          </a>
+        </li>
+        <li class="pt-2">
+          <a
+            href="/contact/"
+            class="block rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700"
+          >
+            Start a Project
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    const menuButton = document.querySelector('[data-menu-button]');
+    const mobileNavigation = document.querySelector('[data-mobile-navigation]');
+    const openIcon = document.querySelector('[data-menu-open-icon]');
+    const closeIcon = document.querySelector('[data-menu-close-icon]');
+
+    menuButton?.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      const nextState = !isOpen;
+
+      menuButton.setAttribute('aria-expanded', String(nextState));
+      menuButton.setAttribute(
+        'aria-label',
+        nextState ? 'Close navigation menu' : 'Open navigation menu'
+      );
+
+      mobileNavigation?.classList.toggle('hidden', !nextState);
+      openIcon?.classList.toggle('hidden', nextState);
+      closeIcon?.classList.toggle('hidden', !nextState);
+    });
+  </script>
 </header>
